@@ -1,0 +1,29 @@
+version: '3'
+services:
+  pita-api:
+    build: ./
+    ports:
+      - "3000:3000"
+    depends_on:
+      - pita-db
+
+  pita-db:
+    image: postgres:latest
+    container_name: pita-db
+    hostname: pita-db
+    expose:
+      - 5432
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: pita
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: e5UhC39wJQ9Ak42qjxT2
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+networks:
+  my_network:
+    driver: bridge
