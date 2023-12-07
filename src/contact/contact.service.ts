@@ -12,4 +12,8 @@ export class ContactService {
   public async create(dto: CreateContactDto): Promise<Contact> {
     return await this.repository.save(dto);
   }
+
+  public async findAll(): Promise<Contact[]> {
+    return await this.repository.find();
+  }
 }

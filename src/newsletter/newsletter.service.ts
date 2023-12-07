@@ -12,4 +12,8 @@ export class NewsletterService {
   public async create(dto: CreateNewsletterDto): Promise<Newsletter> {
     return await this.repository.save(dto);
   }
+
+  public async findAll(): Promise<Newsletter[]> {
+    return await this.repository.find();
+  }
 }
