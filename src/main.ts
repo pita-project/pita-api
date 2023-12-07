@@ -17,7 +17,7 @@ async function bootstrap() {
   );
 
   // Security
-  app.enableCors({ origin: process.env.APP_URL, credentials: true });
+  app.enableCors({ origin: '*', credentials: true });
   app.use(helmet.crossOriginResourcePolicy({ policy: 'cross-origin' }));
   app.disable('x-powered-by');
 
