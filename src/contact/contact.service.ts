@@ -9,7 +9,7 @@ export class ContactService {
   @InjectRepository(Contact)
   private readonly repository: Repository<Contact>;
 
-  public async create(dto: CreateContactDto) {
+  public async create(dto: CreateContactDto): Promise<Contact> {
     return await this.repository.save(dto);
   }
 }
