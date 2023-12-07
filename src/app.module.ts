@@ -17,7 +17,7 @@ import { NewsletterModule } from './newsletter/newsletter.module';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       entities: ['dist/**/*.entity.{ts,js}'],
-      synchronize: false, // Ne mettez pas à true en production
+      synchronize: true, // Ne mettez pas à true en production
     }),
     ContactModule,
     NewsletterModule,
